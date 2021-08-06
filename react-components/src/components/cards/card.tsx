@@ -7,14 +7,14 @@ export default function Card(prop: MusicCard): JSX.Element {
     <div className="card">
       <img src={prop.imgAlbum} alt="" />
       <div className="hiddenDiv">
-        <div
+        <img
+          src={Constants.iconsPath.play}
           className="btnPlay"
           onClick={(ev) => {
             alert(prop.tittle);
           }}
-        >
-          play
-        </div>
+        />
+
         <div className="cardContent">
           <span className="songName">{`${prop.artist} - ${prop.tittle}`}</span>
           <span className="albumName">{prop.album}</span>

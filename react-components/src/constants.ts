@@ -1,5 +1,6 @@
 export const iconsPath = {
   search: './Icons/search.svg',
+  play: './Icons/play.jpg',
 };
 
 export const cardsArray = [
