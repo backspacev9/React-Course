@@ -1,35 +1,59 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import './form.scss';
+import { Card } from '../../interface/card';
 
-export const Form = () => {
+export const Form = ({ setFormsValues }: any) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [birthDay, setBirthDay] = useState('');
+  const [birthday, setBirthday] = useState('');
   const [country, setCountry] = useState('Belarus');
   const [agreement, setAgreement] = useState(false);
   const [notifications, setNotifications] = useState(false);
-  const submit = () => {
-    event.preventDefault();
-    console.log(firstName);
-    console.log(lastName);
-    console.log(birthDay);
-    console.log(country);
-    console.log(agreement);
-    console.log(notifications);
+
+  const reset = () => {
+    setFirstName('');
+    setLastName('');
+    setBirthday('');
+    setCountry('Belarus');
+    setAgreement(false);
+    setNotifications(false);
   };
+
+  const submit = (event: FormEvent) => {
+    event.preventDefault();
+    setFormsValues((state: Card[]) => [
+      ...state,
+      {
+        firstName,
+        lastName,
+        birthday,
+        country,
+        agreement,
+        notifications,
+      },
+    ]);
+    reset();
+  };
+
   return (
     <form className="form" onSubmit={submit}>
       <label htmlFor="firstName" className="firstName">
         <input
           name="firstName"
           type="text"
+          placeholder="Your Name"
+          value={firstName}
+          required
           onChange={(event) => setFirstName(event.target.value)}
         />
       </label>
       <label htmlFor="lastName" className="lastName">
         <input
           name="lastName"
+          placeholder="Your Surname"
           type="text"
+          value={lastName}
+          required
           onChange={(event) => setLastName(event.target.value)}
         />
       </label>
@@ -37,14 +61,16 @@ export const Form = () => {
         <input
           name="birthDay"
           type="date"
-          onChange={(event) => setBirthDay(event.target.value)}
+          value={birthday}
+          required
+          onChange={(event) => setBirthday(event.target.value)}
         />
       </label>
       <label htmlFor="country" className="country">
         <select
           className="country"
           name="country"
-          id=""
+          value={country}
           onChange={(event) => setCountry(event.target.value)}
         >
           <option>Belarus</option>
@@ -55,8 +81,9 @@ export const Form = () => {
       </label>
       <label htmlFor="agreement" className="agreement">
         <input
-          type="checkbox"
+          type="radio"
           name="agreement"
+          required
           checked={agreement}
           onChange={() => setAgreement((prev) => !prev)}
         />
@@ -69,7 +96,7 @@ export const Form = () => {
             checked={notifications}
             onChange={() => setNotifications((prev) => !prev)}
           />
-          <span className="slider round"></span>
+          <span className="slider round" />
         </label>
         <p>Recive notifications</p>
       </label>

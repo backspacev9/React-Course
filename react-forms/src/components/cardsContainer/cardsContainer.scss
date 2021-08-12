@@ -1,0 +1,19 @@
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(71, 202, 141);
+    color: rgb(26, 26, 26);
+    font-size: 23px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.card:nth-child(n + 2) {
+    margin-left: 10px;
+}

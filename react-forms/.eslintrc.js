@@ -12,4 +12,13 @@ module.exports = {
             version: 'detect',
         },
     },
+    plugins: [
+        // ...
+        'react-hooks',
+    ],
+    rules: {
+        // ...
+        'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
+        'react-hooks/exhaustive-deps': 'warn', // Проверяем зависимости эффекта
+    },
 };
