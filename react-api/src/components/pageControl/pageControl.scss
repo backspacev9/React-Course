@@ -1,0 +1,25 @@
+.pageControl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 150px;
+    margin-top: 15px;
+    .prevPage,
+    .nextPage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #564745;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 15px;
+    }
+    .textPage {
+        padding: 0px 10px;
+    }
+    button:disabled {
+        filter: opacity(0.5);
+    }
+}
