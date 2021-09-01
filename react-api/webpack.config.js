@@ -9,7 +9,7 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '/dist'),
         assetModuleFilename: 'assets/[hash][ext]',
     },
 
@@ -55,7 +55,9 @@ module.exports = {
 
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: '/dist',
+        publicPath: '/',
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.css', 'scss'],

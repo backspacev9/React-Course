@@ -1,0 +1,16 @@
+.PageNotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    span {
+        color: #707070;
+        font-weight: 600;
+    }
+    span:nth-child(1) {
+        font-size: 50px;
+    }
+    span:nth-child(2) {
+        font-size: 24px;
+    }
+}

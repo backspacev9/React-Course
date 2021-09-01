@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article, ArticleProps } from '../../interface/article';
+import { Article, ArticleProps } from '../../../../interface/article';
 import ArticleElement from './articleElement';
 
 export default function ContainerArticle({ articles }: ArticleProps): JSX.Element {

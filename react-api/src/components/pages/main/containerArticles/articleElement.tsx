@@ -1,11 +1,13 @@
 import React from 'react';
-import { ArticleProps } from '../../interface/article';
+import { Link, useParams } from 'react-router-dom';
+import { ArticleProps } from '../../../../interface/article';
 import './containerArticle.scss';
-import * as Constants from '../../constants';
+import * as Constants from '../../../../constants';
 
 export default function ArticleElement({ articleProps }: ArticleProps): JSX.Element {
+  const { id } = articleProps.source;
   return (
-    <a className="link" target="_blank" href={articleProps.url} rel="noreferrer">
+    <Link className="linkElement" to={`/details/${id}`}>
       <div className="articleCard">
         <img
           src={
@@ -15,6 +17,7 @@ export default function ArticleElement({ articleProps }: ArticleProps): JSX.Elem
         />
         <div className="textPart">
           <h3>{articleProps.title}</h3>
+
           <p>{articleProps.description}</p>
           <div className="footerArticle">
             <span className="author">{articleProps.author}</span>
@@ -22,6 +25,6 @@ export default function ArticleElement({ articleProps }: ArticleProps): JSX.Elem
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

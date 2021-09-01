@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #1781be;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+        padding-inline-start: 0px;
+        color: white;
+        font-weight: 500;
+        li {
+            a {
+                text-decoration: none;
+            }
+            a:visited {
+                color: white;
+            }
+        }
+        li:nth-child(n + 2) {
+            margin-left: 10px;
+        }
+    }
+}
+
+.activeLink {
+    border-bottom: 2px solid white;
+}

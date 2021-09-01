@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react';
 
-import { ControlProps } from '../../interface/controlProps';
+import { ControlProps } from '../../../../interface/controlProps';
 import './pageControl.scss';
 
 export default function PageControl({

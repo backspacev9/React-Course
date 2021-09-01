@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import './search.scss';
-import * as Constants from '../../constants';
-import { ControlProps } from '../../interface/controlProps';
+import * as Constants from '../../../../constants';
+import { ControlProps } from '../../../../interface/controlProps';
 
 function Search({
   setSearchValue,
